@@ -5,7 +5,7 @@ that are supposed to be equal.
 
 ## Obtainage
 
-Via Leiningen: `[com.gfredericks/haystack "0.1.0"]`
+Via Leiningen: `[com.gfredericks/haystack "0.2.0"]`
 
 ## Usage
 
