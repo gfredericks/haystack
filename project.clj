@@ -1,4 +1,4 @@
-(defproject com.gfredericks/haystack "0.2.1-SNAPSHOT"
+(defproject com.gfredericks/haystack "0.2.1"
   :description "Dataset Difference Debugging in Clojure"
   :url "https://github.com/fredericksgary/haystack"
   :license {:name "Eclipse Public License"
