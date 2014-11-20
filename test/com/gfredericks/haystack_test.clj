@@ -33,17 +33,17 @@
                              :diff {:reason :different-values
                                     :values [3 42]}}
 
-       {:a 7 :b 15} {:b 15} {:reason :missing-key
-                             :key :a
+       {:a 7 :b 15} {:b 15} {:reason :missing-keys
+                             :keys #{:a}
                              :arg-position :second}
 
        #{9 8 2} #{2 9} {:reason :missing-value
                         :identifier 8
                         :arg-position :second}
 
-       #{9 8 2} #{2 9 11} {:reason :missing-value
-                           :identifier 8
-                           :arg-position :second}))
+       #{9 8 2} #{2 8 9 11} {:reason :missing-value
+                             :identifier 11
+                             :arg-position :first}))
 
 (deftest ordered?-test
   (are [a b out] (= out (needle a b {:ordered? false}))
@@ -83,8 +83,8 @@
     (are [a b out] (= out (needle a b {}))
          {:baz {:bar nil}} {:baz {}} {:reason :different-element
                                       :key :baz
-                                      :diff {:reason :missing-key
-                                             :key :bar
+                                      :diff {:reason :missing-keys
+                                             :keys #{:bar}
                                              :arg-position :second}}
 
          {:baz (with-meta {:bar nil} opts)}
