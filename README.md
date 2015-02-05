@@ -3,7 +3,7 @@
 A Clojure library for debugging differences between large datasets
 that are supposed to be equal.
 
-## Obtainage
+## Obtention
 
 Via Leiningen: `[com.gfredericks/haystack "0.3.0"]`
 
